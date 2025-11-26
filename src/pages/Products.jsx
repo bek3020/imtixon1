@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 
 const Products = () => {
@@ -73,23 +73,22 @@ const Products = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((p) => (
-            <div
-              key={p.id}
-              className="border p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            >
-              <img
-                src={p.img}
-                alt={p.name}
-                className="w-full h-48 object-cover rounded mb-3"
-              />
-              <h2 className="text-lg font-semibold">{p.name}</h2>
-              <p className="text-sm text-gray-600">
-                Category: <strong>{p.category || "Noma'lum"}</strong>
-              </p>
-              <p className="text-lg font-bold text-[#F45E0C] mt-1">
-                Price: ${p.price}
-              </p>
-            </div>
+            <Link to={`/product/${p.id}`} key={p.id}>
+              <div className="border p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-48 object-cover rounded mb-3"
+                />
+                <h2 className="text-lg font-semibold">{p.name}</h2>
+                <p className="text-sm text-gray-600">
+                  Category: <strong>{p.category || "Noma'lum"}</strong>
+                </p>
+                <p className="text-lg font-bold text-[#F45E0C] mt-1">
+                  Price: ${p.price}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       )}
