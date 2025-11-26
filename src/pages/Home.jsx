@@ -24,6 +24,7 @@ import Logo4 from "../assets/img/canon.png";
 import Logo5 from "../assets/img/huawei.png";
 import Logo6 from "../assets/img/lenevo.png";
 import Watch from "../assets/img/watch.png";
+import Blog from "./Blog";
 const Home = () => {
   const navigate = useNavigate();
 
@@ -328,6 +329,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Blog />
     </main>
   );
 };

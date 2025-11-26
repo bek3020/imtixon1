@@ -31,7 +31,8 @@ const BestSellers = () => {
             <p className="text-lg font-semibold">${item.price}</p>
 
             <div className="flex items-center gap-1 mt-1 text-blue-600">
-              ⭐ <span>{item.rate}</span>
+              <i class="fa-solid fa-star"></i>
+              <span>{item.rate}</span>
             </div>
           </div>
         ))}
